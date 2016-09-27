@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Post Tweets</h1>
+    <form method="post" action="/update">
+      <input type="text" name="status">
+      <input type="submit" value="Post!">
+    </form>
+    <h1>Statuses</h1>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Tweet</th>
+        <th>Date</th>
+      </tr>
+      <% for (var i = 0; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].user.screen_name %></td>
+        <td><%= data[i].text %></td>
+        <td><%= data[i].created_at %></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
