@@ -34,7 +34,7 @@ class Generic {
 
   static timeline(callback){
     myoauth.get(
-      'https://api.twitter.com/1.1/statuses/home_timeline.json',
+        'https://api.twitter.com/1.1/statuses/home_timeline.json',
       config.user_token,
       config.user_secret,
       function(e,data,rs){

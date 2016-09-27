@@ -7,6 +7,9 @@
   TIMELINE
   <% for (let j in timeline){ %>
     <li><%= timeline[j].user.name %>: <%= timeline[j].text %>
+      <% if (timeline[j].entities.hasOwnProperty('media')) { %>
+        <img src=<%= timeline[j].entities.media[0].media_url %> height="60px">
+      <% } %>
   <% } %>
   <br>
   <br>
@@ -18,7 +21,7 @@
   <br>
   <% if (data){
     for (let i in data.statuses){ %>
-    <li>Username: <%= data.statuses[i].user.name %> ||| Twit: <%= data.statuses[i].text %>
+      <li>Username: <%= data.statuses[i].user.name %> ||| Twit: <%= data.statuses[i].text %>
     <% }
   } %>
 </body>
