@@ -37,7 +37,7 @@ html(lang='en')
               a(href='#') Services
             li
               a(href='#') Contact
-            
+
         // /.navbar-collapse
       // /.container
     // Page Content
@@ -58,7 +58,9 @@ html(lang='en')
             each user, i in users
               .col-sm-4.col-lg-4.col-md-4
                 .thumbnail
-                  img(src=`${user.profile_image_url.replace(/_normal/gi,"")}`, alt='')
+                  a(href='https://twitter.com/'+`${user.screen_name}`)
+                    img(src=`${user.profile_image_url.replace(/_normal/gi,"")}`, alt='')
+                    | <>
                   .caption
                     h4.pull-right name : #{user.name}
                     h4.pull-right screen name : #{user.screen_name}

@@ -32,7 +32,7 @@ router.post('/twit',function (req,res,next) {
       data = JSON.parse(data)
 
       data.sort(function (vala,valb) {
-        return vala.id.toString() < valb.id.toString()
+        return valb.followers_count - vala.followers_count
       })
       res.render('users',{users:data})
     }else{
