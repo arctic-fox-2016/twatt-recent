@@ -28,20 +28,16 @@ router.post('/twit',function (req,res,next) {
     '780589482588286977-jjhmNnrsuA8DrNubXF2ydKA1p3zmsho',
     '2CftURC60FldgAixSzIJvBRGoOVPiQXS710Jc8mZakpKO',
     (e,data,rs)=>{
-      console.log(`got response: ${data.statusCode}`)
-      // data.resume()
+      if(data){
       data = JSON.parse(data)
-      data.sort(function (vala,valb) {
 
+      data.sort(function (vala,valb) {
         return vala.id.toString() < valb.id.toString()
       })
-      // data.map((val)=>{
-      //   var img = val.profile_image_url.replace(/_normal/gi,"")
-      //   console.log(img)
-      //   return img
-      // })
-      // res.send(data)
       res.render('users',{users:data})
+    }else{
+      res.render('users',{users:[]})
+    }
     })
 })
 
