@@ -1,0 +1,40 @@
+body{
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*header*/
+#site-header .navbar {
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  background: #4F5464;
+  color: #e4e4e4;
+}
+
+/*main section*/
+#site-main {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+/*footer*/
+footer{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 12px;
+  background: #4F5464;
+  color: #e4e4e4;
+}
+
+.jumbotron{
+  border: 2px solid #eee;
+  background: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}

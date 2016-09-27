@@ -1,0 +1,28 @@
+{
+  "name": "twatt-recent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arctic-fox-2016/twatt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arctic-fox-2016/twatt/issues"
+  },
+  "homepage": "https://github.com/arctic-fox-2016/twatt#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "oauth": "^0.9.14",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4"
+  }
+}

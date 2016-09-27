@@ -1,0 +1,7 @@
+<% if (searched_word){ %>
+    <ol>
+    <% for (let i in searched_word.statuses){ %>
+		    <li>@<%= searched_word.statuses[i].user.screen_name %> <br> <%= searched_word.statuses[i].text %></li> <br>
+    <% } %>
+    </ol>
+<% } %>

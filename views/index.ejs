@@ -1,0 +1,34 @@
+<div class="col-sm-6 col-sm-offset-3">
+	<form action="/search" method="POST">
+
+	    <div class="form-group">
+	        <input type="text" name="word" class="form-control" placeholder="Search Tweet">
+	    </div>
+
+	    <div class="form-group">
+	        <button type="submit" class="btn btn-default btn-sm">Search</button>
+	    </div>
+
+	</form>
+
+	<form action="/" method="POST">
+
+	    <div class="form-group">
+	        <textarea name="tweet" class="form-control" placeholder="Post Tweet"></textarea>
+	    </div>
+
+	    <div class="form-group">
+	        <button type="submit" class="btn btn-primary btn-sm">Tweet</button>
+	    </div>
+
+	</form>
+	
+	<div><h1>TIMELINE</h1></div>
+	
+	<% for (i in my_tweet) {%>
+		<div class="jumbotron">
+			<p><%= my_tweet[i].text %></p>
+			<p style="font-size: 10px"><%= my_tweet[i].created_at %></p>
+		</div>
+	<% } %>
+</div>
