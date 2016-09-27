@@ -33,14 +33,35 @@ class Generic {
   }
 
   static timeline(callback){
-    let result_timeline = Generic.oauthGet('https://api.twitter.com/1.1/statuses/home_timeline.json', config.user_token, config.user_secret)
-    console.log(result_timeline)
-    callback(result_timeline)
+    myoauth.get(
+      'https://api.twitter.com/1.1/statuses/home_timeline.json',
+      config.user_token,
+      config.user_secret,
+      function(e,data,rs){
+        if(e){
+          console.error(e)
+        } else {
+          let result_timeline = JSON.parse(data)
+          callback(result_timeline)
+        }
+      }
+    )
   }
 
   static search(input, callback){
-    let result_search = Generic.oauthGet(`https://api.twitter.com/1.1/search/tweets.json?count=10&q=${input}`, config.user_token, config.user_secret)
-    callback(result_search)
+    myoauth.get(
+      `https://api.twitter.com/1.1/search/tweets.json?count=10&q=${input}`,
+      config.user_token,
+      config.user_secret,
+      function(e,data,rs){
+        if(e){
+          console.error(e)
+        } else {
+          let result_search = JSON.parse(data)
+          callback(result_search)
+        }
+      }
+    )
   }
 }
 
