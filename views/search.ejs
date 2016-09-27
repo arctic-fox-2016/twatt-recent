@@ -1,0 +1,21 @@
+<%- include('layout.ejs')%>
+
+
+<h1><%= title%></h1>
+
+<form action='/search' method="POST">
+  Input your search: <br>
+  <input type='text' name='searchQuery' value=''>
+  <input type='submit' value='submit'>
+</form>
+
+
+<br><br>
+<h3>Searching Result</h3>
+
+<% for (i=0; i<dataTwitter.length; i++) { %>
+  <p><li> <%= dataTwitter[i].text%> </li></p>
+<%}%>
+
+</body>
+</html>
