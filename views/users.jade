@@ -60,7 +60,6 @@ html(lang='en')
                 .thumbnail
                   a(href='https://twitter.com/'+`${user.screen_name}`)
                     img(src=`${user.profile_image_url.replace(/_normal/gi,"")}`, alt='')
-                    | <>
                   .caption
                     h4.pull-right name : #{user.name}
                     h4.pull-right screen name : #{user.screen_name}
