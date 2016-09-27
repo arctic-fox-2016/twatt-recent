@@ -16,36 +16,31 @@ class Generic {
     return output
   }
 
-  static timeline(callback){
+  static oauthGet(url_query, user_token, user_secret){
     myoauth.get(
-      'https://api.twitter.com/1.1/statuses/home_timeline.json',
-      config.user_token,
-      config.user_secret,
+      url_query,
+      user_token,
+      user_secret,
       function(e,data,rs){
         if(e){
           console.error(e)
         } else {
-          let result_timeline = JSON.parse(data)
-          callback(result_timeline)
+          console.log(JSON.parse(data))
+          return JSON.parse(data)
         }
       }
     )
   }
 
+  static timeline(callback){
+    let result_timeline = Generic.oauthGet('https://api.twitter.com/1.1/statuses/home_timeline.json', config.user_token, config.user_secret)
+    console.log(result_timeline)
+    callback(result_timeline)
+  }
+
   static search(input, callback){
-    myoauth.get(
-      `https://api.twitter.com/1.1/search/tweets.json?count=10&q=${input}`,
-      config.user_token,
-      config.user_secret,
-      function(e,data,rs){
-        if(e){
-          console.error(e)
-        } else {
-          let result_search = JSON.parse(data)
-          callback(result_search)
-        }
-      }
-    )
+    let result_search = Generic.oauthGet(`https://api.twitter.com/1.1/search/tweets.json?count=10&q=${input}`, config.user_token, config.user_secret)
+    callback(result_search)
   }
 }
 
