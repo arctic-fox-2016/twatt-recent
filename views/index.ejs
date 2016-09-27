@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+  TWATTER GADUNGAN JADI-JADIAN
+  <br>
+  TIMELINE
+  <% for (let j in timeline){ %>
+    <li><%= timeline[j].user.name %>: <%= timeline[j].text %>
+  <% } %>
+  <br>
+  <br>
+  SILAHKAN SEARCH
+  <form action="/" method="POST">
+    <input type="text" name="q">
+    <input type="submit">
+  </form>
+  <br>
+  <% if (data){
+    for (let i in data.statuses){ %>
+    <li>Username: <%= data.statuses[i].user.name %> ||| Twit: <%= data.statuses[i].text %>
+    <% }
+  } %>
+</body>
+</html>
