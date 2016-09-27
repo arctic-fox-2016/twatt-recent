@@ -19,22 +19,30 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/twit', function(req, res, next) {
-
-  myOauth.get('https://api.twitter.com/1.1/users/search.json?q=ivan%20gerard&page=1&count=1000',
-  '780589482588286977-jjhmNnrsuA8DrNubXF2ydKA1p3zmsho',
-  '2CftURC60FldgAixSzIJvBRGoOVPiQXS710Jc8mZakpKO',
-  (e,data,rs)=>{
-    console.log(`got response: ${data.statusCode}`)
-    // data.resume()
-    data = JSON.parse(data)
-    data.sort(function (vala,valb) {
-
-      return vala.id.toString() < valb.id.toString()
-    })
-    res.send(data)
-  })
-
+  res.render('users',{users:[]})
   // res.render('index', { title: 'Express' });
 });
+router.post('/twit',function (req,res,next) {
+
+    myOauth.get(`https://api.twitter.com/1.1/users/search.json?q=${req.body.username}&page=1&count=1000`,
+    '780589482588286977-jjhmNnrsuA8DrNubXF2ydKA1p3zmsho',
+    '2CftURC60FldgAixSzIJvBRGoOVPiQXS710Jc8mZakpKO',
+    (e,data,rs)=>{
+      console.log(`got response: ${data.statusCode}`)
+      // data.resume()
+      data = JSON.parse(data)
+      data.sort(function (vala,valb) {
+
+        return vala.id.toString() < valb.id.toString()
+      })
+      // data.map((val)=>{
+      //   var img = val.profile_image_url.replace(/_normal/gi,"")
+      //   console.log(img)
+      //   return img
+      // })
+      // res.send(data)
+      res.render('users',{users:data})
+    })
+})
 
 module.exports = router;
