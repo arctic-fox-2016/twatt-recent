@@ -1,0 +1,78 @@
+html {
+  background: #00aced; }
+
+body {
+  background: transparent;
+  font-family: 'Prompt', sans-serif; }
+
+.form-control {
+  box-shadow: none !important;
+  outline: none !important; }
+
+#twatt-logo-wrapper {
+  margin: 50px 0px;
+  text-align: center; }
+  #twatt-logo-wrapper #twatt-logo {
+    display: block;
+    margin: 0px auto;
+    height: 50px; }
+  #twatt-logo-wrapper #twatt-highlight {
+    color: #fff;
+    display: block;
+    margin-top: 7px; }
+
+#panel-search {
+  margin-bottom: 30px; }
+
+#panel-profile #profile-logo {
+  border: 3px solid #fff;
+  border-radius: 100%;
+  display: block;
+  margin: 0px auto;
+  width: 80px;
+  height: 80px; }
+
+#panel-profile #profile-name {
+  display: block;
+  margin-top: 10px;
+  text-align: center; }
+
+#panel-result .result-text {
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center; }
+  #panel-result .result-text span.highlight {
+    background: #fff;
+    color: #00aced;
+    margin-left: 5px;
+    padding: 0px 5px; }
+
+#panel-result .panel {
+  background: transparent;
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: none; }
+  #panel-result .panel .panel-header, #panel-result .panel .panel-body, #panel-result .panel .panel-footer {
+    border: 0px;
+    border-radius: 0px;
+    padding: 10px; }
+  #panel-result .panel .panel-body {
+    background: #fff;
+    border-radius: 3px; }
+  #panel-result .panel .panel-footer {
+    background: transparent; }
+
+#panel-result p {
+  margin: 0px; }
+
+#panel-result img.user {
+  border: 3px solid #fff;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px; }
+
+#panel-result span.user {
+  color: #fff;
+  margin-left: 10px; }
+
+/*# sourceMappingURL=style.min.css.map */
