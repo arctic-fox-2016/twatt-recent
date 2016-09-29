@@ -1,0 +1,7 @@
+<% if (word_searched){ %>
+    <ol>
+    <% for (let i in word_searched.statuses){ %>
+		    <li><%= word_searched.statuses[i].user.screen_name %> <br> <%= word_searched.statuses[i].text %></li> <br>
+    <% } %>
+    </ol>
+<% } %>
