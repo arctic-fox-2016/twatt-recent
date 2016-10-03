@@ -12,6 +12,7 @@
     "express": "~4.13.4",
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
+    "node-twitter-api": "^1.8.0",
     "oauth": "^0.9.14",
     "postgresql": "0.0.1",
     "request": "^2.75.0",
