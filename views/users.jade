@@ -37,6 +37,8 @@ html(lang='en')
                 a(href='/twit') Search Users
               li
                 a(href='/newtwit') New Twit
+              li
+                a(href='/timeline') Timeline
             li
               a(href='#') Contact
 
@@ -65,6 +67,8 @@ html(lang='en')
                   .caption
                     h4.pull-right name : #{user.name}
                     h4.pull-right screen name : #{user.screen_name}
+                    br
+                    p status : #{user['status']['text']}
                   .ratings
                     p.pull-right #{user.followers_count} followers
                     p

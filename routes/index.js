@@ -65,5 +65,19 @@ router.post('/newtwit',function (req,res,next) {
         res.send('ok')
       })
 })
+router.get('/timeline',function (req,res,next) {
+
+  myOauth.get(`https://api.twitter.com/1.1/statuses/user_timeline.json`,
+  '780589482588286977-jjhmNnrsuA8DrNubXF2ydKA1p3zmsho',
+  '2CftURC60FldgAixSzIJvBRGoOVPiQXS710Jc8mZakpKO',
+  (e,data,rs)=>{
+    if(data){
+      var dt = JSON.parse(data)
+    res.send(dt[0]['user'])
+  }else{
+    res.send(data)
+  }
+  })
+})
 
 module.exports = router;
