@@ -73,7 +73,7 @@ router.get('/timeline',function (req,res,next) {
   (e,data,rs)=>{
     if(data){
       var dt = JSON.parse(data)
-    res.send(dt[0]['user'])
+    res.send(dt)
   }else{
     res.send(data)
   }
